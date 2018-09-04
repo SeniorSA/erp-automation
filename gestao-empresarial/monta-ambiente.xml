@@ -1,0 +1,13 @@
+<project default="default">
+	<target name="default">
+		<echo>Montando ambiente Maven</echo>
+		<exec dir=".." executable="cmd">
+			<arg line="/c mvn eclipse:clean eclipse:eclipse" />
+		</exec>
+
+		<echo>Instalando projetos no repositório local</echo>
+		<exec dir=".." executable="cmd">
+			<arg line="/c mvn install -DskipTests" />
+		</exec>
+	</target>
+</project>
