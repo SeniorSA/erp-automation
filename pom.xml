@@ -24,7 +24,22 @@
 		<dependency>
 			<groupId>br.com.senior.fast</groupId>
 			<artifactId>framework-testes-api</artifactId>
-			<version>6.2.33.438</version>
+			<version>6.2.33.436</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.senior.fast</groupId>
+			<artifactId>asas-uti</artifactId>
+			<version>6.2.33.436</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.senior.fast</groupId>
+			<artifactId>qa-io-api</artifactId>
+			<version>6.2.33.436</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
 		</dependency>
 	</dependencies>
 	<repositories>
