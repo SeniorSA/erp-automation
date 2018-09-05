@@ -103,4 +103,9 @@ public final class Form120GPDComponentNames {
      * Campo <b>Nome Cliente</b>
      */
     public static final String FD_NOME_CLIENTE = "LNomCli";
+    
+    /**
+     * Campo <b>Valor entrada atividades</b> 
+     */
+	public static final String FD_VALOR_ENTRADA = "EVlrEnt";
 }

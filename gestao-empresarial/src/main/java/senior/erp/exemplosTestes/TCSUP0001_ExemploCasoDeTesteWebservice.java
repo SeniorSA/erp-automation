@@ -13,7 +13,7 @@ import com.senior.framework.testes.SistemaSeniorComTransacao;
 import senior.erp.ReexecutarTeste.Reexecutar;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.TCBaseERPNucleo;
+import senior.erp.MetodosComunsNucleo;
 import senior.erp.componentNames.webServices.WsMcmCprOrdemCompraConstants;
 
 /**
@@ -32,14 +32,14 @@ public class TCSUP0001_ExemploCasoDeTesteWebservice {
     @BeforeClass
     public static void setUpClass() {
         try {
-            SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS + " -mcdebug");
+            SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE + " -mcdebug");
         } catch (Exception e) {
             if (e.getMessage().contains("Timeout")) {
                 SistemaSenior.finalizarSistema();
-                SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS + " -mcdebug");
+                SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE + " -mcdebug");
             }
         }
-        TCBaseERPNucleo.selecionarEmpresaFilial(170, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(170, 1);
     }
 
     /**
@@ -63,7 +63,7 @@ public class TCSUP0001_ExemploCasoDeTesteWebservice {
      */
     @After
     public void tearDown() {
-        TCBaseERPNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS + " -mcdebug");
+        MetodosComunsNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPORTE + " -mcdebug");
     }
 
     /**
@@ -71,7 +71,7 @@ public class TCSUP0001_ExemploCasoDeTesteWebservice {
      */
     @Test
     public void testScenario0001_ExemploTesteWebservice() {
-        TCBaseERPNucleo.selecionarEmpresaFilial(170, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(170, 1);
         SistemaSenior.executarWebServices(WsMcmCprOrdemCompraConstants.SERVICE_NAME, WsMcmCprOrdemCompraConstants.PORT_GRAVAR_ORDENS_COMPRA, "TC-SUP-0019 - Ent_Cen0001", "TC-SUP-0019 - Res_Cen0001", 10000);
         //Validações
     }

@@ -49,6 +49,21 @@ public final class Form405SOLComponentNames {
      * Botão <b>Inserir</b>
      */
     public static final String BT_INSERIR = "BtnAlterar";
+    
+    /**
+     * Campo <b>Numero Solicitacao </b>
+     */
+	public static final String FD_NUM_SOL = "DENumSol1";
+
+	/**
+     * Campo <b>Sequencia </b>
+     */
+	public static final String FD_SEQ_SOL = "DESeqSol1";
+
+	/**
+     * Campo <b>Transação </b>
+     */
+	public static final String FD_TRANSACAO = "DECodTns1";
 
     private Form405SOLComponentNames() {
         //Components Names

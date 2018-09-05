@@ -19,6 +19,10 @@ public class AssertivaERP {
     private static final String PALAVRA_RESERVADA_SQL_WHERE = " where ";
     private static final String REGEX_FIELD_SEPARATOR = ",(?=([^\']*\'[^\']*\')*[^\']*$)";
 
+    /**
+     * OBS: Os valores devem ser passados da forma como se esperam que estejam no banco de dados. 
+     * Ex: Se o valor que deve estar no banco de dados é 3 deve ser usado 3 na assertiva e não 3.00
+     */
     public static void executaValidacao(final String comandoSQL, final String tabela, final String chavesPrimarias, final String valores, int linhasEsperadas, ParametroSQL... parametroSQLs) {
         montaSQL(comandoSQL, tabela, chavesPrimarias, valores, linhasEsperadas, parametroSQLs);
     }

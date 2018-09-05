@@ -166,5 +166,25 @@ public final class Form440GNEComponentNames {
      * Botão <b>Recalcular</b>
      */
     public static final String BT_RECALCULAR = "BtRecalcular";
+    
+	/**
+     * Origem de Mercadoria</b>
+     */
+	public static final String FD_ORIGEM_MERC = "ESeqOrm";
+    
+    /**
+     * Campo <b>Cgc/Cpf</b>
+     */
+    public static final String FD_CGCCPF = "ECgcCpf";
+    
+    /**
+     * Campo <b>Valor liquido informado</b>
+     */
+    public static final String FD_VALOR_LIQUIDO = "EVlrInf";
+
+    /**
+     * Botão <b>Doc. Fiscal</b>
+     */
+	public static final String BT_DOC_FISCAL = "BtDocFiscal";
 
 }

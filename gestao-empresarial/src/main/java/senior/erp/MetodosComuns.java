@@ -46,7 +46,7 @@ import com.senior.framework.testes.smoking.AccessibleSystem;
 /**
  *
  */
-public class TCBaseERP extends TCBaseERPNucleo {
+public class MetodosComuns extends MetodosComunsNucleo {
 
     /**
      * Script FAST para trocar o usuário do sistema
@@ -791,7 +791,7 @@ public class TCBaseERP extends TCBaseERPNucleo {
         SistemaSenior.clicar(Form000PGSComponentNames.BT_PROCESSAR);
         SistemaSenior.conferirCaixaMensagem("Advertência", parametros.length / 2 + " parâmetro(s) global(is) alterado(s)!", "OK");
 
-        TCBaseERP.fecharTela(Form000PGSComponentNames.FR_NOME);
+        MetodosComuns.fecharTela(Form000PGSComponentNames.FR_NOME);
     }
 
     /**
@@ -824,7 +824,7 @@ public class TCBaseERP extends TCBaseERPNucleo {
      * @param nomeArquivoGerado
      */
     public static void removerArquivoXMLGerado(final String nomeArquivoGerado) {
-        TCBaseERP.removerArquivo(TCBaseERP.obterCaminhoRelGerado(true) + File.separator + TCBaseERP.obterNomeArquivoPeloPrefixo(TCBaseERP.obterCaminhoRelGerado(true) + nomeArquivoGerado));
+        MetodosComuns.removerArquivo(MetodosComuns.obterCaminhoRelGerado(true) + File.separator + MetodosComuns.obterNomeArquivoPeloPrefixo(MetodosComuns.obterCaminhoRelGerado(true) + nomeArquivoGerado));
     }
 
     /**
@@ -934,11 +934,11 @@ public class TCBaseERP extends TCBaseERPNucleo {
      */
     public static void salvarArquivoTelaLog() {
         SistemaSenior.clicarMenu("Arquivo", "Salvar Como");
-        SistemaSenior.salvarArquivo(TCBaseERP.obterCaminhoRelGerado(true));
+        SistemaSenior.salvarArquivo(MetodosComuns.obterCaminhoRelGerado(true));
         SistemaSenior.teclar(Tecla.ENTER);
         SistemaSenior.clicarMenu("Arquivo", "Salvar Como");
-        SistemaSenior.salvarArquivo(TCBaseERP.obterCaminhoRelGerado(true) + "\\log.LOG");
-        TCBaseERP.fecharTela(Form000EDIComponentNames.FR_NOME);
+        SistemaSenior.salvarArquivo(MetodosComuns.obterCaminhoRelGerado(true) + "\\log.LOG");
+        MetodosComuns.fecharTela(Form000EDIComponentNames.FR_NOME);
     }
 
     /**
@@ -952,7 +952,7 @@ public class TCBaseERP extends TCBaseERPNucleo {
         if (AccessibleSystem.getCommandManager().getApplication().hasMessage()) {
             final ITestMessage existeMensagem = AccessibleSystem.getCommandManager().getApplication().getMessage();
             if (existeMensagem.getDescription().equals(mensagemEsperada)) {
-                TCBaseERPNucleo.getManipuladorDeComandos().getApplication().getMessage().click("&Ok");
+                MetodosComunsNucleo.getManipuladorDeComandos().getApplication().getMessage().click("&Ok");
             }
         }
         return mensagemEsperada;

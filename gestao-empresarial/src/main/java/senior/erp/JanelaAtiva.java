@@ -27,7 +27,7 @@ public class JanelaAtiva {
 	 */
 	public JanelaAtiva() {
 
-		CommandManager commandManager = TCBaseERPNucleo.getManipuladorDeComandos();
+		CommandManager commandManager = MetodosComunsNucleo.getManipuladorDeComandos();
 		container = commandManager.getActiveContainer();
 		app = commandManager.getApplication();
 

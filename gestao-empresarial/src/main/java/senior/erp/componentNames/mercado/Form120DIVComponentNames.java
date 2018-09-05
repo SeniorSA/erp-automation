@@ -29,7 +29,22 @@ public final class Form120DIVComponentNames {
      * Campo <b>Forma de pagamento</b>
      */
     public static final String FD_FORMA_DE_PAGAMENTO = "ECodFpg";
+    
+	/**
+	 *  Campo <b>Safra</b>  
+	 */
+	public static final String FD_SAFRA = "SECodSaf";
 
+	/**
+	 *  Campo <b>Observação do pedido</b>  
+	 */
+	public static final String FD_OBSERVACAO_PEDIDO = "MObsPed";
+
+	/**
+	 *  Campo <b>Observação do pedido</b>  
+	 */
+	public static final String FR_DIVERSOS = "BDivPed";   
+    
     private Form120DIVComponentNames() {
 
     }
