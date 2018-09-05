@@ -957,5 +957,16 @@ public class MetodosComuns extends MetodosComunsNucleo {
         }
         return mensagemEsperada;
     }
+    
+    /**
+     * Gera um número para testes que necessitam de valores dinâmicas, como por exemplo incluir um título no contas a receber
+     * @return numeroGerado
+     * 
+     */
+	public static int retornaNumero() {
+		Random geradorNumero = new Random();
+	    int numeroGerado = geradorNumero.nextInt();
+	    return numeroGerado;
+	}
 
 }

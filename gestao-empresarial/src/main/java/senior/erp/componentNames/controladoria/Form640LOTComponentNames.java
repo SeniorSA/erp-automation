@@ -59,6 +59,12 @@ public final class Form640LOTComponentNames {
      * Tela <b>Cadastro de Lotes</b>
      */
     public static final String FR_NOME = "F640LOT_CCCT";
+    
+    public static final String FR_LOTES = "F640LOT_CCCT";
+	public static final String FD_NUMERO_LOTE = "ENumLot";
+	public static final String FD_FILIAL = "ECodFil";
+	public static final String FD_DATA_LOTE = "EDatLot";
+	public static final String BT_PROCESAR = "BtnProcessar";
 
     private Form640LOTComponentNames() {
     }
