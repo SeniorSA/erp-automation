@@ -66,6 +66,18 @@ public class TCDAFI0001_CadastroDeIndice {
     	SistemaSenior.conferirCaixaMensagem("Advertência", "Títulos selecionados foram cancelados com sucesso!", "&OK");    	
 		TCBaseERP.fecharTela(Form310PRBComponentNames.FR_NOME);	*/
 	}
+	
+	/**
+	 *  
+	 */
+	@Test
+	public void testeCriado() {
+		SistemaSenior.clicar("BT_MOSTRAR");			
+	/*	SistemaSenior.clicar(Form310PRBComponentNames.BT_PROCESSAR);	
+    SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma processamento?", "&Sim");	
+    	SistemaSenior.conferirCaixaMensagem("Advertência", "Títulos selecionados foram cancelados com sucesso!", "&OK");    	
+		TCBaseERP.fecharTela(Form310PRBComponentNames.FR_NOME);	*/
+	}
 }
 	
 	

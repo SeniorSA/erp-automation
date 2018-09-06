@@ -18,7 +18,7 @@ import senior.erp.componentNames.financas.Form310PRBComponentNames;
 
 public class TCFRCRP0001_RemessaCR {
 
-	/**
+	/** 
 	 * Inicializa o sistema.
 	 */
 	@BeforeClass
