@@ -22,7 +22,7 @@ import senior.erp.componentNames.financas.Form301TCRComponentNames;
  * 
  */
 
-public class EntradaManual {
+public class AlteracaoVencimentoCR {
 
 	/**
 	 * 
@@ -50,32 +50,23 @@ public class EntradaManual {
 	@Test
 	public void testScenario01() {
 		MetodosComuns.selecionarEmpresaFilial(1, 1);
-		SistemaSenior.abrirTela("NF301TCR_FRCR");
-		SistemaSenior.preencherCampo("DENumTit1", "TESTE001");
-		SistemaSenior.preencherCampo("DECodTpt1", "REC");
-		SistemaSenior.teclar(4, Tecla.TAB);
-		SistemaSenior.preencherCampo("DECodCli1", "404709");
-		SistemaSenior.teclar(5, Tecla.TAB);
-		SistemaSenior.preencherCampo("DMObsTcr1", "TESTE DE ENTRADA MANUAL PARA O FAST", Tecla.TAB);
-		SistemaSenior.preencherCampo("DECodNtg1", "168", Tecla.TAB);
-		SistemaSenior.preencherCampo("DECtaFin1", "1150", Tecla.TAB);
+		SistemaSenior.abrirTela("NF301AVP_FRCR");
+		SistemaSenior.preencherCampo("ECodCli", "120442", Tecla.TAB);
+		SistemaSenior.teclar(7, Tecla.TAB);
+		SistemaSenior.teclar(Tecla.F4);	
+		SistemaSenior.teclar(Tecla.ENTER);			
+	 //SistemaSenior.preencherCampo("ENovVct", "08/09/2018");
+		SistemaSenior.teclar(3, Tecla.TAB);
+		SistemaSenior.clicar("Selecao");// S&eleção
+		SistemaSenior.preencherCampo("SAVCodFil", "1", Tecla.TAB);
 		SistemaSenior.teclar(Tecla.TAB);
-		SistemaSenior.preencherCampo("DECodCcu1", "3660", Tecla.TAB);
-		SistemaSenior.teclar(Tecla.TAB);
-		SistemaSenior.preencherCampo("DEVlrOri1", "1500.00", Tecla.TAB);
-		SistemaSenior.teclar(38, Tecla.TAB);
-		SistemaSenior.clicar("BtnAlterar");// &Inserir
-
-		SistemaSeniorComTransacao.executarSQLQuery("select * from e301tcr " + "where CodEmp = 1 " + "and CodFil = 1 "
-				+ "and NumTit = 'TESTE001' " + "and CodCli = 404709 " + "and CodTpt = 'REC' " + "and VlrOri = 1500.00 ",
-				1);
-
-		SistemaSenior.teclar(Tecla.TAB);
-		SistemaSenior.clicar("BtnExcluir");// &Excluir
+		SistemaSenior.preencherCampo("SAVCodTpt", "DUP", Tecla.TAB);
+		SistemaSenior.clicar("Ok");// &Ok
+		SistemaSenior.clicar("Mostrar");// &Mostrar
+		//SistemaSenior.preencherLinhaCorrenteGrade("GridAvp", "Sel", CaixaAtribuicao.MARCADO);
+		SistemaSenior.clicar("Processar");// &Processar
 		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-
-		SistemaSeniorComTransacao.executarSQLQuery("select * from e301tcr " + "where CodEmp = 1 " + "and CodFil = 1 "
-				+ "and NumTit = 'TESTE001' " + "and CodCli = 404709 " + "and CodTpt = 'REC' " + "and VlrOri = 1500.00 ",
-				0);
+		SistemaSenior.fecharTela("F301AVP");
 	}
+
 }
