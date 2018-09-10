@@ -22,7 +22,7 @@ import br.com.senior.asas.testinterfaces.ITestLabel;
  * 
  */
 
-public class TCBaseERPNucleo extends SistemaSeniorComTransacao {
+public class MetodosComunsNucleo extends SistemaSeniorComTransacao {
 
     protected static Description dadosInstanciaClasseTeste;
     protected static String nomeSistemaUTI;
@@ -57,8 +57,8 @@ public class TCBaseERPNucleo extends SistemaSeniorComTransacao {
             executarSQL("update r999pos set postop=0, poslef=0, sitfrm = 2");
             iniciarTransacao();
         } else {
-            TCBaseERPNucleo.nomeSistemaUTI = nomeSistema;
-            TCBaseERPNucleo.parametrosSistemaUTI = parametroAdicional;
+            MetodosComunsNucleo.nomeSistemaUTI = nomeSistema;
+            MetodosComunsNucleo.parametrosSistemaUTI = parametroAdicional;
         }
     }
 
@@ -155,8 +155,8 @@ public class TCBaseERPNucleo extends SistemaSeniorComTransacao {
      */
     public static void selecionarEmpresaFilial(int empresa, int filial) {
 
-        TCBaseERPNucleo.empresaSelecionada = empresa;
-        TCBaseERPNucleo.filialSelecionada = filial;
+        MetodosComunsNucleo.empresaSelecionada = empresa;
+        MetodosComunsNucleo.filialSelecionada = filial;
 
         if (modoMapeamentoAQTIME) return;
 
@@ -242,7 +242,7 @@ public class TCBaseERPNucleo extends SistemaSeniorComTransacao {
 
         while (!j.getNome().equalsIgnoreCase("FMENU")) {
             if (j.getNome().equals("FrmMessage")) {
-                TCBaseERP.fecharTela(j.getNome());
+                MetodosComuns.fecharTela(j.getNome());
             }
             else if (j.getDescricao().contains("Access ")) {
                 throw new RuntimeException("Tentou fechar a tela ativa, mas encontrou a tela com a seguinte descrição: " + j.getDescricao());

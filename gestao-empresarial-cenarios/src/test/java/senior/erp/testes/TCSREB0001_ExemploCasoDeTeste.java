@@ -18,8 +18,8 @@ import senior.erp.ReexecutarTeste.Reexecutar;
 import senior.erp.SystemMessageTitles;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.TCBaseERP;
-import senior.erp.TCBaseERPNucleo;
+import senior.erp.MetodosComuns;
+import senior.erp.MetodosComunsNucleo;
 import senior.erp.componentNames.mercado.Form140PREComponentNames;
 import senior.erp.componentNames.suprimentos.Form435CCCComponentNames;
 import senior.erp.utils.FacadeSuprimentos;
@@ -71,7 +71,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @After
     public void tearDown() {
-        TCBaseERPNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS);
+        MetodosComunsNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS);
     }
 
     /**
@@ -79,7 +79,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @Test
     public void testScenario0001_ExemploTeste() {
-        TCBaseERPNucleo.selecionarEmpresaFilial(170, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(170, 1);
 
 		SistemaSenior.abrirTela(Form435CCCComponentNames.FR_NOME);
 		SistemaSenior.preencherCampo(Form435CCCComponentNames.FD_PLACA, "CEN-0001", Tecla.TAB);
@@ -110,7 +110,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_CONFIRMACAO, "Confirma processamento?", "Sim");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_ADVERTENCIA, "Processado com sucesso!", "OK");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_AVISO, "Nenhum modelo de relatório ligado a esta tela, ou todo(s) o(s) modelos ligados estão inativos.", "OK");
-        TCBaseERP.fecharTela(Form435CCCComponentNames.FR_NOME);
+        MetodosComuns.fecharTela(Form435CCCComponentNames.FR_NOME);
         //Validações
     }
     
@@ -119,7 +119,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @Test
     public void testScenario0009() {
-        TCBaseERPNucleo.selecionarEmpresaFilial(120, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(120, 1);
 
         SistemaSenior.abrirTela(Form140PREComponentNames.FR_NOME);
         SistemaSenior.preencherCampo(Form140PREComponentNames.FD_TIPO, "1", Tecla.TAB);
@@ -132,7 +132,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
         SistemaSenior.conferirCaixaMensagem("Advertência", "Produto do item 1 não possui classificação fiscal!", "Ok");
         SistemaSenior.conferirCaixaMensagem("Confirmação", "Transferência realizada com sucesso. Deseja fechar Nota Fiscal?", "Sim");
         SistemaSenior.conferirCaixaMensagem("Confirmação", "Nota Fechada com Sucesso. Deseja Imprimir?", "Não");
-        TCBaseERP.fecharTela(Form140PREComponentNames.FR_NOME);
+        MetodosComuns.fecharTela(Form140PREComponentNames.FR_NOME);
 
         SistemaSeniorComTransacao.executarSQLQuery("select 1 from E140NFV where   CODEMP='120' and  CODFIL='1' and  CODSNF='NFE' and  TIPNFS='1' and  CODEDC='01' and  TNSPRO='5101' and  CODCLI='3' and  CODREP='1' and  CODCPG='1' and  CODMOE='01' and  VLRBPR='821.6' and  VLRBIC='821.6' and  VLRICM='147.89' and  VLRBSI='1150.24' and  VLRSIC='287.56' and  VLRBCO='1109.16' and  VLRLPR='1109.16' and  VLRLIQ='1109.16' and  VLRFIN='1109.16' and  SITNFV='2'  and exists ( select * from E140IPV where E140NFV.codemp=E140IPV.codemp and e140NFV.codfil=E140IPV.codfil and E140NFV.codsnf=E140IPV.codsnf and E140NFV.numnfv=E140IPV.numnfv and E140IPV.numped=115) ", 1);
         AssertivaERP.executaValidacao("SELECT 2", "E140IPV", "CODEMP='120' ,  CODFIL='1' ,  CODSNF='NFE' ,  SEQIPV='1', TNSPRO='5101' ,  FILPED='1' ,  NUMPED='115' ,  SEQIPD='1' ,  CODPRO='PAC0013' ,  CODDER='AZL'", "CODFAM='PAC' ,  CODCLF=' ' ,  CODSTR='010' ,  CODTST='SBT' ,  CODDEP='DEPPAC2' ,  QTDFAT='13' ,  UNIMED='PC' ,  PREUNI='63.2' ,  PREBAS='5.63' ,  PERICM='18' ,  SALCAN='F' ,  VLRBRU='821.6' ,  VLRBIC='821.6' ,  VLRICM='147.89' ,  VLRBSI='1150.24' ,  VLRICS='287.56' ,  VLRBCO='1109.16' ,  VLRIIP='821.6' ,  VLRLPR='1109.16' ,  VLRLIQ='1109.16' ,  VLRFIN='1109.16' ,  PREBRU='63.2'", 1);
@@ -149,7 +149,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @Test
     public void teste0001_EntradaBalancaViaOrdemCompra() {
-        TCBaseERPNucleo.selecionarEmpresaFilial(50, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(50, 1);
 
         SistemaSenior.abrirTela("F435COS_SREB");
         SistemaSenior.preencherCampo("EPlaVei", "AAA9999", Tecla.TAB); //Placa/Motorista

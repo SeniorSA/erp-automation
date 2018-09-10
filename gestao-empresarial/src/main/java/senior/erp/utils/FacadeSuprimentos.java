@@ -10,7 +10,7 @@ import com.senior.framework.testes.TipoParametroSQL;
 
 import senior.erp.SystemMessageButtons;
 import senior.erp.SystemMessageTitles;
-import senior.erp.TCBaseERP;
+import senior.erp.MetodosComuns;
 import senior.erp.componentNames.suprimentos.Form435CCCComponentNames;
 import senior.erp.componentNames.suprimentos.Form435MDTComponentNames;
 import senior.erp.componentNames.suprimentos.Form439FIXComponentNames;
@@ -30,7 +30,7 @@ public class FacadeSuprimentos {
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_ADVERTENCIA, "Processado com sucesso!", "OK");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_AVISO, "Nenhum modelo de relatório ligado a esta tela, ou todo(s) o(s) modelos ligados estão inativos.", "OK");
         if (fecharTela) {
-            TCBaseERP.fecharTela(Form435CCCComponentNames.FR_NOME);
+            MetodosComuns.fecharTela(Form435CCCComponentNames.FR_NOME);
         }
     }
 
@@ -50,7 +50,7 @@ public class FacadeSuprimentos {
         }
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_ADVERTENCIA, "Processado com sucesso!", "&Ok");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_AVISO, "Não existem modelos de relatório cadastrados e ativos ou modelos pré-definidos ligados ao identificador de rotina \"F439FIX\"", "OK");
-        if (fecharTela) TCBaseERP.fecharTela(Form439FIXComponentNames.FR_NOME);
+        if (fecharTela) MetodosComuns.fecharTela(Form439FIXComponentNames.FR_NOME);
     }
 
     public static void informarVeiculoFornecedorEntrada(final String placaVeiculoEntrada, final String codigoFornecedor) {
@@ -145,7 +145,7 @@ public class FacadeSuprimentos {
         SistemaSenior.clicar(Form440GNEComponentNames.BT_FECHAR);
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_CONFIRMACAO, "Confirma Fechamento da Nota Fiscal?", SystemMessageButtons.BT_SIM);
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_AVISO, "Nota Fiscal Fechada com Sucesso.", SystemMessageButtons.BT_OK);
-        TCBaseERP.fecharTela(Form440GNEComponentNames.FR_NOME);
+        MetodosComuns.fecharTela(Form440GNEComponentNames.FR_NOME);
     }
     
     /**

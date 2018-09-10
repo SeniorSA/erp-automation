@@ -16,8 +16,8 @@ import senior.erp.ReexecutarTeste.Reexecutar;
 import senior.erp.SystemMessageTitles;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.TCBaseERP;
-import senior.erp.TCBaseERPNucleo;
+import senior.erp.MetodosComuns;
+import senior.erp.MetodosComunsNucleo;
 import senior.erp.componentNames.suprimentos.Form435CCCComponentNames;
 import senior.erp.utils.FacadeSuprimentos;
 
@@ -68,7 +68,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @After
     public void tearDown() {
-        TCBaseERPNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS);
+        MetodosComunsNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.SUPRIMENTOS);
     }
 
     /**
@@ -76,7 +76,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
      */
     @Test
     public void testScenario0001_ExemploTeste() {
-        TCBaseERPNucleo.selecionarEmpresaFilial(170, 1);
+        MetodosComunsNucleo.selecionarEmpresaFilial(170, 1);
 
 		SistemaSenior.abrirTela(Form435CCCComponentNames.FR_NOME);
 		SistemaSenior.preencherCampo(Form435CCCComponentNames.FD_PLACA, "CEN-0001", Tecla.TAB);
@@ -107,7 +107,7 @@ public class TCSREB0001_ExemploCasoDeTeste {
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_CONFIRMACAO, "Confirma processamento?", "Sim");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_ADVERTENCIA, "Processado com sucesso!", "OK");
         SistemaSenior.conferirCaixaMensagem(SystemMessageTitles.MS_AVISO, "Nenhum modelo de relatório ligado a esta tela, ou todo(s) o(s) modelos ligados estão inativos.", "OK");
-        TCBaseERP.fecharTela(Form435CCCComponentNames.FR_NOME);
+        MetodosComuns.fecharTela(Form435CCCComponentNames.FR_NOME);
         //Validações
     }
 
