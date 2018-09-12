@@ -6,23 +6,22 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.senior.framework.testes.CaixaAtribuicao;
 import com.senior.framework.testes.SistemaSenior;
 import com.senior.framework.testes.SistemaSeniorComTransacao;
 import com.senior.framework.testes.Tecla;
-import com.senior.framework.testes.TipoParametroSQL;
 
 import senior.erp.MetodosComuns;
 import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.componentNames.financas.Form301TCRComponentNames;
 
 /**
  * Cenário para entrada e manutenção de títulos do contas a receber;
  * 
  */
 
-public class AlteracaoVencimentoCR {
+public class TCFRCR0002_AlteracaoVencimentoCR {
 
 	/**
 	 * 
@@ -48,7 +47,7 @@ public class AlteracaoVencimentoCR {
 	}
 
 	@Test
-	public void testScenario01() {
+	public void AlteracaoVencimentoCR() {
 		MetodosComuns.selecionarEmpresaFilial(1, 1);
 		SistemaSenior.abrirTela("NF301AVP_FRCR");
 		SistemaSenior.preencherCampo("ECodCli", "120442", Tecla.TAB);
@@ -57,15 +56,16 @@ public class AlteracaoVencimentoCR {
 		SistemaSenior.teclar(Tecla.ENTER);			
 	 //SistemaSenior.preencherCampo("ENovVct", "08/09/2018");
 		SistemaSenior.teclar(3, Tecla.TAB);
-		SistemaSenior.clicar("Selecao");// S&eleção
+		SistemaSenior.clicar("Selecao");// Seleção
 		SistemaSenior.preencherCampo("SAVCodFil", "1", Tecla.TAB);
 		SistemaSenior.teclar(Tecla.TAB);
 		SistemaSenior.preencherCampo("SAVCodTpt", "DUP", Tecla.TAB);
 		SistemaSenior.clicar("Ok");// &Ok
 		SistemaSenior.clicar("Mostrar");// &Mostrar
-		//SistemaSenior.preencherLinhaCorrenteGrade("GridAvp", "Sel", CaixaAtribuicao.MARCADO);
+		SistemaSenior.preencherLinhaCorrenteGrade("GridAvp", "Sel", CaixaAtribuicao.MARCADO);
 		SistemaSenior.clicar("Processar");// &Processar
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
+		SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma processamento?", "&Sim"); // Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
+		SistemaSenior.conferirCaixaMensagem("Advertência", "Processamento realizado com sucesso!", "Ok"); 			
 		SistemaSenior.fecharTela("F301AVP");
 	}
 
