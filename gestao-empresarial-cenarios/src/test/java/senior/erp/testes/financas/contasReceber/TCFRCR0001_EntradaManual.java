@@ -22,7 +22,7 @@ import senior.erp.componentNames.financas.Form301TCRComponentNames;
  * 
  */
 
-public class EntradaManual {
+public class TCFRCR0001_EntradaManual {
 
 	/**
 	 * 
@@ -48,7 +48,7 @@ public class EntradaManual {
 	}
 
 	@Test
-	public void testScenario01() {
+	public void EntradaManual() {
 		MetodosComuns.selecionarEmpresaFilial(1, 1);
 		SistemaSenior.abrirTela("NF301TCR_FRCR");
 		SistemaSenior.preencherCampo("DENumTit1", "TESTE001");
