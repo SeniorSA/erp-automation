@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.senior.framework.testes.SistemaSenior;
 import com.senior.framework.testes.SistemaSeniorComTransacao;
-import com.senior.framework.testes.Tecla;
 
 import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
@@ -16,34 +15,25 @@ import senior.erp.SystemUsers;
 
 public class Teste001_GerarRegrasContabeis {
 
-	/**
-	 * Inicializa o sistema.
-	 */
+	/** Inicializa o sistema. */
 	@BeforeClass
 	public static void setUpClass() {
 		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
-
 	}
 
-	/**
-	 * Finaliza o sistema.
-	 */
+	/** Finaliza o sistema. */
 	@AfterClass
 	public static void tearDownClass() {
 		SistemaSenior.finalizarSistema();
 	}
-	
-	/**
-	 * Inicializa transação para cada cenário de teste.
-	 */
+
+	/** Inicializa transação para cada cenário de teste. */
 	@Before
 	public void setUp() {
 		SistemaSeniorComTransacao.iniciarTransacao();
 	}
 
-	/**
-	 * Reverte transação para cada cenário de teste.
-	 */
+	/** Reverte transação para cada cenário de teste. */
 	@After
 	public void tearDown() {
 		MetodosComunsNucleo.reverterTransacao();
@@ -51,8 +41,7 @@ public class Teste001_GerarRegrasContabeis {
 
 	@Test
 	public void testScenario01() {
-		SistemaSenior.fecharTela("F501TCP");
-		SistemaSenior.abrirTela("NF048FCT");
+		SistemaSenior.abrirTela("F048FCT");
 		SistemaSenior.selecionarGuia("Tabulador", "Itens");
 		SistemaSenior.clicar("BtnGerar");// &Gerar Regra
 		SistemaSenior.clicar("Processar");// &Processar
