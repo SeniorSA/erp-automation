@@ -1,47 +1,63 @@
-import org.junit.*;
-import com.senior.framework.testes.*;
-import senior.erp.TCBaseERPNucleo;
+package senior.erp.testes.cadastros.controladoria;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.senior.framework.testes.SistemaSenior;
+import com.senior.framework.testes.SistemaSeniorComTransacao;
+import com.senior.framework.testes.Tecla;
+
+import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 
 public class Teste001_GerarRegrasContabeis {
- 
-@BeforeClass 
-public static void setUpClass(){ 
-try {
-	SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.X);
-} catch (Exception e) {
-	if (e.getMessage().contains("Timeout")) {
-		SistemaSenior.finalizarSistema();
-		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.X);
+
+	/**
+	 * Inicializa o sistema.
+	 */
+	@BeforeClass
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+
 	}
-}
-TCBaseERPNucleo.selecionarEmpresaFilial(EMPRESA, FILIAL);
-} 
 
-@AfterClass 
-public static void tearDownClass(){ 
-SistemaSenior.finalizarSistema();
-} 
+	/**
+	 * Finaliza o sistema.
+	 */
+	@AfterClass
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	/**
+	 * Inicializa transação para cada cenário de teste.
+	 */
+	@Before
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
 
-@Before 
-public void setUp(){ 
-SistemaSeniorComTransacao.iniciarTransacao();
-} 
+	/**
+	 * Reverte transação para cada cenário de teste.
+	 */
+	@After
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
 
-@After 
-public void tearDown(){ 
-TCBaseERPNucleo.reverterTransacao(SystemName.SAPIENS, SystemUsers.X);
-} 
-
-@Test 
-public void testScenario01(){ 
-} 
-
- 
-
-@Test 
-public void testScenario01(){ 
-} 
+	@Test
+	public void testScenario01() {
+		SistemaSenior.fecharTela("F501TCP");
+		SistemaSenior.abrirTela("NF048FCT");
+		SistemaSenior.selecionarGuia("Tabulador", "Itens");
+		SistemaSenior.clicar("BtnGerar");// &Gerar Regra
+		SistemaSenior.clicar("Processar");// &Processar
+		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
+		SistemaSenior.fecharTela("F048FCT");
+	}
 
 }

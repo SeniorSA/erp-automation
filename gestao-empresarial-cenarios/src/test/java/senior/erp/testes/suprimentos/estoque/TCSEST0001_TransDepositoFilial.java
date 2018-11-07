@@ -1,8 +1,17 @@
-import org.junit.*;
-import com.senior.framework.testes.*;
-import senior.erp.TCBaseERPNucleo;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.senior.framework.testes.CaixaAtribuicao;
+import com.senior.framework.testes.SistemaSenior;
+import com.senior.framework.testes.SistemaSeniorComTransacao;
+import com.senior.framework.testes.Tecla;
+
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
+import senior.erp.TCBaseERPNucleo;
 
 public class TCSEST0001_TransDepositoFilial {
  
