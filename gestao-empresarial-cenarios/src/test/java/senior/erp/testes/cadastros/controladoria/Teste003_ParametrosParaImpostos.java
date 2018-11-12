@@ -67,7 +67,7 @@ public class Teste003_ParametrosParaImpostos {
 				+ "and CodFil = 20 "
 				+ "and codImp = 'ICM' "
 				+ "and coddfs = 59 "
-				+ "and codfbb = 10"
+				+ "and codfbd = 10"
 				+ "and DatApi = '01/01/2018'",
 				1);
 	}
