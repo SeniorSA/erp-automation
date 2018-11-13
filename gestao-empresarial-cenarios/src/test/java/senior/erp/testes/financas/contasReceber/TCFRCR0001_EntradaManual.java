@@ -9,13 +9,11 @@ import org.junit.Test;
 import com.senior.framework.testes.SistemaSenior;
 import com.senior.framework.testes.SistemaSeniorComTransacao;
 import com.senior.framework.testes.Tecla;
-import com.senior.framework.testes.TipoParametroSQL;
 
 import senior.erp.MetodosComuns;
 import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.componentNames.financas.Form301TCRComponentNames;
 
 /**
  * Cenário para entrada e manutenção de títulos do contas a receber;
