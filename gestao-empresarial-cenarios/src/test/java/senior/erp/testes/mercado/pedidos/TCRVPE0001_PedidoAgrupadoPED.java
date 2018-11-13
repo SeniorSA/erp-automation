@@ -35,7 +35,7 @@ public class TCRVPE0001_PedidoAgrupadoPED {
      */
     @BeforeClass
     public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.WURSCHKE);
+        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
     }
 
     /**
