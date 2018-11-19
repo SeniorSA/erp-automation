@@ -77,13 +77,13 @@ public class TCSREB0002_EntradaBalancaViaOrdemCompraAGRO2 {
         SistemaSenior.preencherCampo("ECodFor", "104903", Tecla.TAB); //Fornecedor	
         SistemaSenior.preencherCampo("ESeqOrm", "1", Tecla.TAB); //Seq. Ori. Merc.		
         SistemaSenior.preencherCampo("ECodDep", "D019-04", Tecla.TAB); //Depósito
-        SistemaSenior.preencherCampo("ECodPro", "10006.0001", Tecla.TAB); //Depósito
-        SistemaSenior.preencherCampo("ECodDer", "001", Tecla.TAB); //Depósito
-        SistemaSenior.preencherCampo("ENfcPro", "200", Tecla.TAB); //Depósito
-        SistemaSenior.preencherCampo("ESnfPro", "1", Tecla.TAB); //Depósito
-        SistemaSenior.preencherCampo("ETnsPro", "90421", Tecla.TAB); //Depósito
+        SistemaSenior.preencherCampo("ECodPro", "10006.0001", Tecla.TAB);  
+        SistemaSenior.preencherCampo("ECodDer", "001", Tecla.TAB);  
+        SistemaSenior.preencherCampo("ENfcPro", "200", Tecla.TAB);  
+        SistemaSenior.preencherCampo("ESnfPro", "1", Tecla.TAB);  
+        SistemaSenior.preencherCampo("ETnsPro", "90421", Tecla.TAB);  
         SistemaSenior.preencherCampo("ECodSaf", "2017/2017", Tecla.TAB); //Safra	
-        SistemaSenior.preencherCampo("ECodTrg", "", Tecla.TAB); //Safra	
+        SistemaSenior.preencherCampo("ECodTrg", "", Tecla.TAB);  
         SistemaSenior.marcarCaixaAtribuicao("CBEmitirNota"); // Emitir nota
         SistemaSenior.clicar("Mostrar");
         SistemaSenior.preencherCampo("EPesInf", "20000", Tecla.TAB); //Peso
