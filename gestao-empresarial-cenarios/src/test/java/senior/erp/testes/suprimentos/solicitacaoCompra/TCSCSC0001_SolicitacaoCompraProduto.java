@@ -11,9 +11,9 @@ import com.senior.framework.testes.SistemaSeniorComTransacao;
 import com.senior.framework.testes.Tecla;
 import com.senior.framework.testes.TipoParametroSQL;
 
+import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.MetodosComunsNucleo;
 import senior.erp.componentNames.suprimentos.Form405SOLComponentNames;
 
 /**

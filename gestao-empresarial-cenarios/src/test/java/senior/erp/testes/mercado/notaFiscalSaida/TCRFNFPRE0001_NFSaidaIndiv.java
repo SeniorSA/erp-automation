@@ -9,9 +9,9 @@ import org.junit.Test;
 import com.senior.framework.testes.SistemaSenior;
 import com.senior.framework.testes.SistemaSeniorComTransacao;
 
+import senior.erp.MetodosComuns;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
-import senior.erp.MetodosComuns;
 
 public class TCRFNFPRE0001_NFSaidaIndiv {
 

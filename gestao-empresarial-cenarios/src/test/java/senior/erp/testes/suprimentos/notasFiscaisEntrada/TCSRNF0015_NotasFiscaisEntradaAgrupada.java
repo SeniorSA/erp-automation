@@ -11,10 +11,10 @@ import com.senior.framework.testes.SistemaSeniorComTransacao;
 import com.senior.framework.testes.Tecla;
 import com.senior.framework.testes.TipoParametroSQL;
 
-import senior.erp.SystemName;
-import senior.erp.SystemUsers;
 import senior.erp.MetodosComuns;
 import senior.erp.MetodosComunsNucleo;
+import senior.erp.SystemName;
+import senior.erp.SystemUsers;
 import senior.erp.componentNames.suprimentos.Form420GOCComponentNames;
 import senior.erp.componentNames.suprimentos.Form420VALComponentNames;
 import senior.erp.componentNames.suprimentos.Form440GNEComponentNames;

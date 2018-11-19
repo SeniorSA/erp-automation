@@ -1,7 +1,15 @@
 package senior.erp.testes.suprimentos.estoque;
 
-import org.junit.*;
-import com.senior.framework.testes.*;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.senior.framework.testes.SistemaSenior;
+import com.senior.framework.testes.SistemaSeniorComTransacao;
+import com.senior.framework.testes.Tecla;
+
 import senior.erp.MetodosComuns;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
