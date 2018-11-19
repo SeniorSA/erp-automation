@@ -35,7 +35,7 @@ public class TCSRNF0015_NotasFiscaisEntradaAgrupada {
      */
     @BeforeClass
     public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.CLEITON);
+        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
     }
 
     /**

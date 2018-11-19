@@ -13,6 +13,7 @@ import com.senior.framework.testes.Tecla;
 import senior.erp.MetodosComuns;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
+import senior.erp.componentNames.suprimentos.Form460PFOComponentNames;
 
 public class Teste01_EntradaRomaneio {
 
@@ -72,11 +73,11 @@ public class Teste01_EntradaRomaneio {
 		SistemaSenior.preencherCampo("DECodSaf", "2018/2018");
 		SistemaSenior.teclar(7, Tecla.TAB);
 		SistemaSenior.preencherCampo("DEObsMot", " ");
-		SistemaSenior.teclar(8, Tecla.TAB);
-		SistemaSenior.preencherLinhaCorrenteGrade("GridCcp", "Transação","90421", "Produto","10006.0001", "Derivação","001", 
+		SistemaSenior.selecionarGuia(Form460PFOComponentNames.TS_AGRUPADOR_DAS_ABAS, "Produtos");
+		SistemaSenior.preencherNovaLinhaGrade("GridCcp", "Produto","10006.0001", "Derivação","001", 
 				"Qtde UM Fornecedor", "50.000,00000", "Preço UM Fornecedor", "1", "Preço UM Fornecedor", "1,0000000000",
 				"Valor Cotação", "0,5000000000");	
-		SistemaSenior.teclar(39, Tecla.SETA_CIMA);
+//		SistemaSenior.teclar(39, Tecla.SETA_CIMA);
 		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
 		SistemaSenior.clicar("Aprovar");// Liber&ar
 		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
