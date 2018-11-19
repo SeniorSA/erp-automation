@@ -20,11 +20,6 @@ public class Teste01_EntradaRomaneio {
 	@BeforeClass
 	public static void preExecucaoCasodeTeste() {
 		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
-		MetodosComuns.selecionarEmpresaFilial(1, 4);
-		
-		
-		
-		
 	}
 
 	@AfterClass
