@@ -75,17 +75,11 @@ public class Teste01_EntradaRomaneio {
 		SistemaSenior.selecionarGuia(Form460PFOComponentNames.TS_AGRUPADOR_DAS_ABAS, "Produtos");
 		SistemaSenior.preencherNovaLinhaGrade("GridCcp", "Produto","10006.0001", "Derivação","001", 
 				"Qtde UM Fornecedor", "50.000,00000", "Preço UM Fornecedor", "1", "Preço UM Fornecedor", "1,0000000000",
-				"Valor Cotação", "0,5000000000");	
-//		SistemaSenior.teclar(39, Tecla.SETA_CIMA);
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
+				"Valor Cotação", "0,5000000000");
 		SistemaSenior.clicar("Aprovar");// Liber&ar
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-		SistemaSenior.preencherCampo("DEObjCtr", " ");
-		SistemaSenior.clicar("Aprovar");// &Aprovar
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-		SistemaSenior.clicar("button1");// Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-		SistemaSenior.preencherCampo("DEObjCtr", " ");
+		SistemaSenior.conferirCaixaMensagem("Aviso", "Aprovação efetuada com sucesso.", "OK");
+		SistemaSenior.conferirCaixaMensagem("Aviso", "Contrato está em análise.", "OK");
+		SistemaSenior.clicar("Aprovar");// Liber&ar
 	}
 
 }
