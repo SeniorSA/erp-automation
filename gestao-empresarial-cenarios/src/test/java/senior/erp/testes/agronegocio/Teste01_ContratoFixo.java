@@ -15,7 +15,7 @@ import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 import senior.erp.componentNames.suprimentos.Form460PFOComponentNames;
 
-public class Teste01_EntradaRomaneio {
+public class Teste01_ContratoFixo {
 
 	@BeforeClass
 	public static void preExecucaoCasodeTeste() {
