@@ -43,7 +43,7 @@ public class Teste002_AlteracaoICMSEsp {
 @Test 
 public void testScenario01(){ 
 SistemaSenior.abrirTela("NF019TIE");
-SistemaSenior.selecionarItem("opAlterar", "&Alterar");
+SistemaSenior.marcarCaixaAtribuicao("opAlterar");
 SistemaSenior.teclar(Tecla.TAB);
 SistemaSenior.preencherCampo("ECodTic", "001");
 SistemaSenior.preencherCampo("ECodFil", "1");
@@ -55,7 +55,7 @@ SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "ICMS Ent Não Contrib.","0,
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem","85");
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem 2","85");
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem 3","85");
-SistemaSenior.posicionarLinhaGradePorValor("GridIcm","Sel.",CaixaAtribuicao.MARCADO,"Filial","1","Estado","AC","ICMS Sai Contrib.","5,00","ICMS Sai Não Contrib.","5,00","ICMS Ent Contrib.","4,00","ICMS Ent Não Contrib.","0,00","Mensagem","85","Mensagem 2","85","Mensagem 3","85","Mensagem 4","0");
+SistemaSenior.preencherLinhaCorrenteGrade("GridIcm","Sel.",CaixaAtribuicao.MARCADO,"Filial","1","Estado","AC");
 SistemaSenior.clicar("Processar");//&Processar
 SistemaSenior.clicar("button1");//Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
 SistemaSenior.clicar("button1");//Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
