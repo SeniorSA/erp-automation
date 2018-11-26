@@ -10,7 +10,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	SuiteDeTestesControladoria.class,
 	SuiteDeTestesFinancas.class,
 	SuiteDeTestesMercado.class,
-	SuiteDeTestesSuprimentos.class
+	SuiteDeTestesSuprimentos.class,
+	SuiteDeTestesAgronegocios.class
 })
 
 
