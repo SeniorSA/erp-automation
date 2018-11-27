@@ -94,5 +94,7 @@ public class Teste01_ContratoVariavel {
 		SistemaSenior.clicar("Aprovar");// Liberar
     	SistemaSenior.conferirCaixaMensagem("Advertência", "Contrato liberado para aprovação com sucesso!", "Ok");
     	SistemaSenior.conferirCaixaMensagem("Aviso", "Contrato está em análise.", "Ok");	
+    	
+    	
 	}
 }
