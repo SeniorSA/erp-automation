@@ -73,37 +73,26 @@ public class Teste01_ContratoVariavel {
 		SistemaSenior.clicar("BtAcrescFinanc");// Acrésc. Financ. (&7)
 		SistemaSenior.posicionarLinhaGradePorValor("GridIxA", "Sel.", CaixaAtribuicao.DESMARCADO, "Item Classificação",
 				"101", "Descrição (Item Classificação)", "Complemento de Preço", "Sit.", "I", "Usuário Geração", "0");
-			
-		SistemaSenior.preencherNovaLinhaGrade("GridFxI", "Tipo", "V", "Descrição (Tipo)", "Valor",
-				"Uni. Acrés. Financ.", "SC", "Valor Acrésc. Finan.", "1,00000", "% Acrésc. Financ.", "0,0000",
-				"Agrupar itens", "N", "Uni. Acrés. Financ.", "K.G");
 		
-		SistemaSenior.conferirCaixaMensagem("Aviso", "É necessário informar o valor para o acréscimo financeiro.", "OK");
+		SistemaSenior.preencherLinhaCorrenteGrade("GridIxA", "Sel.", CaixaAtribuicao.MARCADO);	
 		
-		SistemaSenior.posicionarLinhaGradePorValor("GridFxI", "Uni. Acrés. Financ.", "SC", "Valor Acrésc. Finan.", "1");
-		
-		/*
-		 * Codigo abaixo comentado gerado pel o FAST original
-		SistemaSenior.preencherNovaLinhaGrade("GridFxI", "Sel.", CaixaAtribuicao.MARCADO, "Tipo", "V",
-				"Valor Acrésc. Finan.", "1", "Valor Acrésc. Finan.", "1,00000", "Agrupar itens", "N",
-				"Uni. Acrés. Financ.", "K.G");
-		
-		SistemaSenior.preencherLinhaCorrenteGrade("GridFxI", "Uni. Acrés. Financ.", "SC", 
-				"Valor Acrésc. Finan.", "1", "Tipo", "V");
-				
-		SistemaSenior.posicionarLinhaGradePorValor("GridFxI", "Tipo", "V", "Descrição (Tipo)", "Valor",
-				"Uni. Acrés. Financ.", "SC", "Valor Acrésc. Finan.", "1,00000", "% Acrésc. Financ.", "0,0000",
-				"Agrupar itens", "N", "Sit.", "A", "Tipo Faturamento", "2", "Descrição (Tipo Faturamento)",
-				"Na fixação");
-		*/	
-		
-		SistemaSenior.clicar("BtnProcessar");// &Processar
-		SistemaSenior.clicar("BtnSair");// &Sair
-		SistemaSenior.preencherCampo("DEObjCtr", " ");
-		SistemaSenior.clicar("Aprovar");// Liber&ar
-		SistemaSenior.preencherCampo("DEObjCtr", " ");
-		SistemaSenior.clicar("Aprovar");// &Aprovar
-		SistemaSenior.preencherCampo("DEObjCtr", " ");
-	}
+		SistemaSenior.posicionarLinhaGradePorValor("GridIxA", "Sel.", CaixaAtribuicao.MARCADO, "Item Classificação",
+				"101");
+	
+		SistemaSenior.posicionarLinhaGradePorValor("GridFxI");
 
+		
+		SistemaSenior.preencherNovaLinhaGrade("GridFxI", "Tipo", "V", "Valor Acrésc. Finan.", "1,00000", "Uni. Acrés. Financ.", "SC");
+	
+		SistemaSenior.clicar("BtnProcessar");// &Processar
+		
+     	SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma processamento?", "&Sim");
+
+     	SistemaSenior.conferirCaixaMensagem("Advertência", "Processamento realizado com sucesso!", "&Ok");
+
+		SistemaSenior.clicar("BtnSair");// &Sair
+		SistemaSenior.clicar("Aprovar");// Liberar
+    	SistemaSenior.conferirCaixaMensagem("Advertência", "Contrato liberado para aprovação com sucesso!", "Ok");
+    	SistemaSenior.conferirCaixaMensagem("Aviso", "Contrato está em análise.", "Ok");	
+	}
 }
