@@ -20,6 +20,7 @@ public class Teste01_ContratoFixo {
 	@BeforeClass
 	public static void preExecucaoCasodeTeste() {
 		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+		MetodosComuns.selecionarEmpresaFilial(1, 4);
 	}
 
 	@AfterClass

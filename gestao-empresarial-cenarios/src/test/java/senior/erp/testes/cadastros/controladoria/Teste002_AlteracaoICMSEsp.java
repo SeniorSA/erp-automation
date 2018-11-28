@@ -55,11 +55,13 @@ SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "ICMS Ent Não Contrib.","0,
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem","85");
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem 2","85");
 SistemaSenior.preencherLinhaCorrenteGrade("GridIcm", "Mensagem 3","85");
-SistemaSenior.preencherLinhaCorrenteGrade("GridIcm","Sel.",CaixaAtribuicao.MARCADO,"Filial","1","Estado","AC");
+SistemaSenior.preencherLinhaCorrenteGrade("GridIcm","Sel.",CaixaAtribuicao.MARCADO);
 SistemaSenior.clicar("Processar");//&Processar
-SistemaSenior.clicar("button1");//Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-SistemaSenior.clicar("button1");//Este e um campo de mensagem que foi clicado em 'Sim' ou 'Nao'.
-SistemaSenior.selecionarItem("opInserir", "&Inserir");
+SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma processamento?", "&Sim");
+SistemaSenior.conferirCaixaMensagem("Advertência", "Processado com sucesso!", "&Ok");
+SistemaSenior.clicar("Sair");// &Sair
+SistemaSenior.conferirCaixaMensagem("Confirmação", "Deseja realmente sair?", "&Sim");
+
 } 
 
  
