@@ -71,5 +71,4 @@ public class Teste003_ParametrosParaImpostos {
 				+ "and DatApi = '01/01/2018'",
 				1);
 	}
-
 }
