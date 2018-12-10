@@ -56,4 +56,25 @@ public class Teste004_AlteracaoParametrosFiscais {
 			+ "and CodTic = '017' ",
 			1);	
 	} 
+
+	public void testScenario02(){ 
+	SistemaSenior.abrirTela("NF075PFF");
+	SistemaSenior.preencherCampo("ECodPro", "50058.0002");
+	SistemaSenior.clicar("Mostrar");//&Mostrar
+	SistemaSenior.posicionarLinhaGradePorValor("GridPpf");
+		SistemaSenior.preencherLinhaCorrenteGrade("GridPpf", "Ori. Fiscal Merc.","0", "Cód. ICMS Especial","069","Red. Impostos"," ");
+	SistemaSenior.posicionarLinhaGradePorValor("GridPpf","Gravar",CaixaAtribuicao.MARCADO,"Produto","50058.0002");
+	SistemaSenior.clicar("Processar");//&Processar
+	SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma Atualização dos Produtos/Derivações Marcadas?", "&Sim");
+	SistemaSenior.conferirCaixaMensagem("Advertência", "Atualização do Produtos/Derivações Ok! ", "&Ok");
+	SistemaSenior.fecharTela("F075PFF");	 
+	
+	SistemaSeniorComTransacao.executarSQLQuery("select * from e075pro "
+			+ "where CodEmp = 1 "
+			+ "and CodPro = '50058.0002' "
+			+ "and OriMer = '0' "
+			+ "and CodTic = '069' "
+			+ "and CodTrd = ' ' ",
+			1);	
+	} 
 }
