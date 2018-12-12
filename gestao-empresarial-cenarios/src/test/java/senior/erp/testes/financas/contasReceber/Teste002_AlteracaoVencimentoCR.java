@@ -21,7 +21,7 @@ import senior.erp.SystemUsers;
  * 
  */
 
-public class TCFRCR0002_AlteracaoVencimentoCR {
+public class Teste002_AlteracaoVencimentoCR {
 
 	/**
 	 * 

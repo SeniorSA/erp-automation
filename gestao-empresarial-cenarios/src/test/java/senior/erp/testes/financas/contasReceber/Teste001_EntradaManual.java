@@ -20,7 +20,7 @@ import senior.erp.SystemUsers;
  * 
  */
 
-public class TCFRCR0001_EntradaManual {
+public class Teste001_EntradaManual {
 
 	/**
 	 * 

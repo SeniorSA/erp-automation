@@ -36,7 +36,7 @@ public class Teste004_AlteracaoParametrosFiscais {
 		MetodosComunsNucleo.reverterTransacao();
 	}
 
-@Test 
+    @Test 
 	public void testScenario01(){ 
 	SistemaSenior.abrirTela("NF075PFF");
 	SistemaSenior.preencherCampo("ECodPro", "60012.0043");
@@ -57,6 +57,7 @@ public class Teste004_AlteracaoParametrosFiscais {
 			1);	
 	} 
 
+    @Test 
 	public void testScenario02(){ 
 	SistemaSenior.abrirTela("NF075PFF");
 	SistemaSenior.preencherCampo("ECodPro", "50058.0002");
