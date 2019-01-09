@@ -19,36 +19,23 @@ import senior.erp.SystemUsers;
 
 public class TCFPCP0002_BaixasTitulosCP_Dinheiro_Cheque {
 
-	/**
-	 * 
-	 */
-	@BeforeClass
-	public static void preExecucaoCasodeTeste() {
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
 		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
-		
 	}
-
-	/**
-	 * Descreva aqui o que você precisa fazer depois de executar todos os testes.
-	 */
-	@AfterClass
-	public static void posExecucaoCasodeTeste() {
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
 		SistemaSenior.finalizarSistema();
 	}
-
-	/**
-	 * Descreva aqui o que você precisa fazer antes de executar cada teste.
-	 */
-	@Before
-	public void preExecucaoCenario() {
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
 		SistemaSeniorComTransacao.iniciarTransacao();
 	}
-
-	/**
-	 * Descreva aqui o que você precisa fazer depois de executar cada teste.
-	 */
-	@After
-	public void posExecucaoCenario() {
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
 		MetodosComunsNucleo.reverterTransacao();
 	}
 	
@@ -105,7 +92,7 @@ public class TCFPCP0002_BaixasTitulosCP_Dinheiro_Cheque {
 
 		SistemaSenior.clicar("Processar");
 		SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma Baixa de Títulos?", "Sim");
-		SistemaSenior.conferirCaixaMensagem("Confirmação", "Baixas processadas com sucesso. Deseja imprimir recibo para o cliente?", "&Não");
+		SistemaSenior.conferirCaixaMensagem("Confirmação", "Baixa(s) processada(s) com sucesso. Lote Gerado: 09012019F501LOT5. Deseja imprimir comprovante?", "&Não");
 		 
 		SistemaSenior.clicar("Processar");
 		SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma o processamento?", "Sim");
@@ -145,7 +132,7 @@ public class TCFPCP0002_BaixasTitulosCP_Dinheiro_Cheque {
 
 		SistemaSenior.clicar("Processar");
 		SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma Baixa de Títulos?", "Sim");
-		SistemaSenior.conferirCaixaMensagem("Confirmação", "Baixas processadas com sucesso. Deseja imprimir recibo para o cliente?", "&Não");
+		SistemaSenior.conferirCaixaMensagem("Confirmação", "Baixa(s) processada(s) com sucesso. Lote Gerado: ?. Deseja imprimir comprovante?", "&Não");
 		 
 		SistemaSenior.clicar("Processar");
 		SistemaSenior.conferirCaixaMensagem("Confirmação", "Confirma o processamento?", "Sim");

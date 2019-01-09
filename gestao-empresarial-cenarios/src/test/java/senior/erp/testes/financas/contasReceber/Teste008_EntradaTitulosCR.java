@@ -17,56 +17,28 @@ import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 import senior.erp.componentNames.financas.Form301TCRComponentNames;
 
-/**
- * Cenário para entrada e manutenção de títulos do contas a receber;
- * 
- * Pré-condições:
- * Utilizar a base: erpfast;
- * Usuário e senha: financas1/financas1;
- * Empresa e filial: 151/1
- * Proprietária: padrão
- * 
- * @Tarefa: 352835
- * @author: Luciano.Marcos
- */
-
 public class Teste008_EntradaTitulosCR {
 
-    /**
-     * 
-     */
-    @BeforeClass
-    public static void preExecucaoCasodeTeste() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.MARIAELY);
-    }
-
-    /**
-     * Descreva aqui o que você precisa fazer depois de executar todos os testes.
-     */
-    @AfterClass
-    public static void posExecucaoCasodeTeste() {
-        SistemaSenior.finalizarSistema();
-    }
-
-    /**
-     * Descreva aqui o que você precisa fazer antes de executar cada teste.
-     */
-    @Before
-    public void preExecucaoCenario() {
-        SistemaSeniorComTransacao.iniciarTransacao();
-    }
-
-    /**
-     * Descreva aqui o que você precisa fazer depois de executar cada teste.
-     */
-    @After
-    public void posExecucaoCenario() {
-        MetodosComunsNucleo.reverterTransacao();
-    }
-
-    /**
-     * 
-     */
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+	}
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
+	
     @Test
     public void testScenario0001() {
     	String codigoCliente = "304931";

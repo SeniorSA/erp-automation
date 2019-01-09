@@ -20,50 +20,28 @@ import senior.erp.SystemUsers;
 import senior.erp.componentNames.mercado.Form140CANComponentNames;
 import senior.erp.componentNames.suprimentos.Form070FR2ComponentNames;
 
-/**
- * Testar a geração de Nota Fiscal do Faturamento do Leite
- *
- */
-
 public class TCSUP0001_ValidarNotaLeite {
 
-    /**
-     * Inicializa o sistema.
-     */
-    @BeforeClass
-    public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.MARIAELY);
-    }
-
-    /**
-     * Finaliza o sistema.
-     */
-    @AfterClass
-    public static void tearDownClass() {
-        SistemaSenior.finalizarSistema();
-    }
-
-    /**
-     * Inicializa transação para cada cenário de teste.
-     */
-    @Before
-    public void setUp() {
-        SistemaSeniorComTransacao.iniciarTransacao();
-    }
-
-    /**
-     * Reverte transação para cada cenário de teste.
-     */
-    @After
-    public void tearDown() {
-        MetodosComunsNucleo.reverterTransacao();
-    }
-    
-    /**
-     * Gerar nova Nota Fiscal de Leite.
-     * Carregar a tela com o ultimo processmento, mudar a situação da nota para 4 e limpar os dados da Nota fiscal
-     * Clicar e Farurar e sair da tela
-     */
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+	}
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
+	
     @Test
     public void testValidacaoNFLeite() {
     	MetodosComuns.selecionarEmpresaFilial(1, 1);
@@ -86,7 +64,7 @@ public class TCSUP0001_ValidarNotaLeite {
     	SistemaSeniorComTransacao.executarSQLQuery("select * from usu_t070fr2 where Usu_CodEmp = 1 and Usu_CodUni = 3 and Usu_CodLin =1 and Usu_CodLat = 10 and usu_mesRef =? and usu_datger = ? and Usu_ImpFri = 5" , 1,SistemaSenior.parametroSql(TipoParametroSQL.DATE, "01/06/2017"), SistemaSenior.parametroSql(TipoParametroSQL.DATE, SistemaSenior.dataAtual()));
     	
     	/**
-         * Emissão da Nota na tela de Mercadp
+         * Emissão da Nota na tela de Mercado
         */
     	String[][] notaGerada = SistemaSeniorComTransacao.recuperaValoresBaseDados("Select NumNfv from E140nfv where codemp=1 and codfil=1 and codsnf='NFE' and datemi = ? and TnsPro = '1102L' and codcli =105616 and UsuGer = 16",  SistemaSenior.parametroSql(TipoParametroSQL.DATE, SistemaSenior.dataAtual()));
     	String numeroNotaGerada = notaGerada[0][0];

@@ -21,50 +21,29 @@ import senior.erp.componentNames.suprimentos.Form440GNEComponentNames;
 import senior.erp.componentNames.suprimentos.Form440NFVComponentNames;
 
 
-/**
- * Cenário que trata o registro de Notas Fiscais de Entrada;
- * 
- * @author: cleiton.marmentini
- * @Data: 10/08/2017
- */
 
 public class TCSRNF0015_NotasFiscaisEntradaAgrupada {
 
-    /**
-     * Inicializa sistema.
-     */
-    @BeforeClass
-    public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
-    }
-
-    /**
-     * Finaliza sistema.
-     */
-    @AfterClass
-    public static void tearDownClass() {
-        SistemaSenior.finalizarSistema();
-    }
-
-    /**
-     * Inicializa transação.
-     */
-    @Before
-    public void setUp() {
-        SistemaSeniorComTransacao.iniciarTransacao();
-    }
-
-    /**
-     * Finaliza transação.
-     */
-    @After
-    public void tearDown() {
-        MetodosComunsNucleo.reverterTransacao();
-    }
-
-    /**
-     * 
-     */
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+	}
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
+	
     @Test
     public void testDevolucaoVendaDireta0001() {
 

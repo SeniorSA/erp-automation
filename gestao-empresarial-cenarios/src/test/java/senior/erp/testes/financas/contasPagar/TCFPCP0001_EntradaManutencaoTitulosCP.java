@@ -16,45 +16,28 @@ import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 
-
 public class TCFPCP0001_EntradaManutencaoTitulosCP {
 
-    /**
-     * Inicializa o sistema.
-     */
-    @BeforeClass
-    public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
-        
-    }
-
-    /**
-     * Finaliza o sistema.
-     */
-    @AfterClass
-    public static void tearDownClass() {
-        SistemaSenior.finalizarSistema();
-    }
-
-    /**
-     * Inicializa transação para cada cenário de teste.
-     */
-    @Before
-    public void setUp() {
-        SistemaSeniorComTransacao.iniciarTransacao();
-    }
-
-    /**
-     * Reverte transação para cada cenário de teste.
-     */
-    @After
-    public void tearDown() {
-        MetodosComunsNucleo.reverterTransacao();
-    }
-
-    /**
-	 *  Inclui um titulo no contas a pagar via tela F501TCP_FPCP
-	 */
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+	}
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
+	
     @Test
     public void testScenario0001() {
     	

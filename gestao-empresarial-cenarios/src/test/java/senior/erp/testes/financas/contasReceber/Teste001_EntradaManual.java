@@ -15,33 +15,26 @@ import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 
-/**
- * Cenário para entrada e manutenção de títulos do contas a receber;
- * 
- */
 
 public class Teste001_EntradaManual {
 
-	/**
-	 * 
-	 */
-	@BeforeClass
-	public static void preExecucaoCasodeTeste() {
-		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.WURSCHKE);
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
 	}
-
-	@AfterClass
-	public static void posExecucaoCasodeTeste() {
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
 		SistemaSenior.finalizarSistema();
 	}
-
-	@Before
-	public void preExecucaoCenario() {
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
 		SistemaSeniorComTransacao.iniciarTransacao();
 	}
-
-	@After
-	public void posExecucaoCenario() {
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
 		MetodosComunsNucleo.reverterTransacao();
 	}
 

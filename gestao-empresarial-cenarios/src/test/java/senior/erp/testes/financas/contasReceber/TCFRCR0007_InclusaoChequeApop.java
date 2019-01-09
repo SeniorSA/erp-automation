@@ -16,49 +16,28 @@ import senior.erp.MetodosComunsNucleo;
 import senior.erp.SystemName;
 import senior.erp.SystemUsers;
 
-/**
- * Testar a inclusão de cheque com geraçao de título do APOP
- *
- */
-
 public class TCFRCR0007_InclusaoChequeApop {
 
-    /**
-     * Inicializa o sistema.
-     */
-    @BeforeClass
-    public static void setUpClass() {
-        SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.MARIAELY);
-    }
-
-    /**
-     * Finaliza o sistema.
-     */
-    @AfterClass
-    public static void tearDownClass() {
-        SistemaSenior.finalizarSistema();
-    }
-
-    /**
-     * Inicializa transação para cada cenário de teste.
-     */
-    @Before
-    public void setUp() {
-        SistemaSeniorComTransacao.iniciarTransacao();
-    }
-
-    /**
-     * Reverte transação para cada cenário de teste.
-     */
-    @After
-    public void tearDown() {
-        MetodosComunsNucleo.reverterTransacao();
-    }
-    
-    /**
-     * Inclusão de cheque para aplicação de apop.
-     * Utilizar transação específica 90312 para geração do título a pagar tipo APO
-     */
+	@BeforeClass  /** Inicializa o sistema. */
+	public static void setUpClass() {
+		SistemaSenior.iniciarSistema(SystemName.SAPIENS, SystemUsers.SUPORTE);
+	}
+	
+	@AfterClass  /** Finaliza o sistema. */
+	public static void tearDownClass() {
+		SistemaSenior.finalizarSistema();
+	}
+	
+	@Before     /** Inicializa transação para cada cenário de teste. */
+	public void setUp() {
+		SistemaSeniorComTransacao.iniciarTransacao();
+	}
+	
+	@After     /** Reverte transação para cada cenário de teste. */
+	public void tearDown() {
+		MetodosComunsNucleo.reverterTransacao();
+	}
+	
     @Test
     public void testInclusaoChequeApop() {
         MetodosComuns.selecionarEmpresaFilial(1, 1);
