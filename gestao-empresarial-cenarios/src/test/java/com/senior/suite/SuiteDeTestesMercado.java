@@ -7,10 +7,6 @@ import org.junit.runners.Suite.SuiteClasses;
 import senior.erp.testes.mercado.notaFiscalSaida.TCRFNFPRE0001_NFSaidaIndiv;
 import senior.erp.testes.mercado.pedidos.TCRVPE0001_PedidoAgrupadoPED;
 
-/**
- * @author marcel.fortunato
- *
- */
 @RunWith(Suite.class)
 @SuiteClasses({
 	TCRFNFPRE0001_NFSaidaIndiv.class,

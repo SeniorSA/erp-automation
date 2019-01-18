@@ -7,10 +7,6 @@ import org.junit.runners.Suite.SuiteClasses;
 import senior.erp.testes.cadastros.controladoria.Teste001_GerarRegrasContabeis;
 import senior.erp.testes.cadastros.financas.TCDAFI0001_CadastroDeIndice;
 
-/**
- * @author roberto.debarba
- *
- */
 @RunWith(Suite.class)
 @SuiteClasses({
 	Teste001_GerarRegrasContabeis.class,

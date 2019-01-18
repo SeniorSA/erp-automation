@@ -8,10 +8,6 @@ import senior.erp.testes.agronegocio.Teste01_ContratoFixo;
 import senior.erp.testes.agronegocio.Teste01_ContratoVariavel;
 
 
-/**
- * @author roberto.debarba
- *
- */
 @RunWith(Suite.class)
 @SuiteClasses({
 	Teste01_ContratoFixo.class,
